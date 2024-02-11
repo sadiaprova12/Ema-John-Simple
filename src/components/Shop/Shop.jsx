@@ -8,12 +8,12 @@ const Shop = () => {
     useEffect( () =>{
         fetch('products.json')
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setProducts(data))
     },[])
     return (
         <div className='shop-container'>
             <div className="products-container">
-                <h2>Products coming here</h2>
+                <h2>Products coming here:{products.length}</h2>
             </div>
             <div className="cart-container">
                 <h4>Oder Summary</h4>
