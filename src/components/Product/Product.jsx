@@ -5,6 +5,10 @@ import './Product.css';
 
 
 const Product = (props) => {
+    // eslint-disable-next-line react/prop-types
+    //console.log(props.product);
+    
+    // eslint-disable-next-line react/prop-types
     const {img, name, seller, quantity, price} = props.product;
     return (
         <div className='product'>
