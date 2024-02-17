@@ -13,6 +13,7 @@
 
 .product-name{
     margin-top: 0px;
+    margin-bottom: 0px;
     font-size: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -25,4 +26,17 @@
 
 .product-info{
     margin-left: 14px;
+}
+
+.product-info p{
+    margin-top: 5px;
+}
+
+/* 50-5 Style Product Cart, Style Debug And Button Position */
+.btn-cart{
+    width: 100%;
+    background: #ffe0b3;
+    border: 1px solid #95A0A7;
+    border-radius: 0px 0px 8px 8px;
+    color: black;
 }
