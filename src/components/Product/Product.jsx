@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
@@ -13,7 +14,13 @@ const Product = (props) => {
     return (
         <div className='product'>
             <img src={img} alt="" />
-            <h6>{name}</h6>
+           <div className='product-info'>
+           <h6 className='product-name'>{name}</h6>
+            <p>Price: ${price}</p>
+            <p>Manufacturer: {seller}</p>
+            
+           </div>
+        
         </div>
     );
 };
