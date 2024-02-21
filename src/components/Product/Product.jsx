@@ -11,6 +11,11 @@ const Product = (props) => {
     
     // eslint-disable-next-line react/prop-types
     const {img, name, seller, quantity, price} = props.product;
+
+    const handelAddToCart = () =>{
+        
+    }
+
     return (
         <div className='product'>
             <img src={img} alt="" />
