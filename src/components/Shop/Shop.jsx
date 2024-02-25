@@ -6,7 +6,7 @@ import Product from '../Product/Product';
 const Shop = () => {
     const [products, setProducts] = useState([]);
 
-    const [cart, setCart] = useState()
+    const [cart, setCart] = useState([])
 
     useEffect( () =>{
         fetch('products.json')
@@ -35,7 +35,7 @@ const Shop = () => {
             </div>
             <div className="cart-container">
                 <h4>Oder Summary</h4>
-                {/* <p>Selected Items: {cart.length}</p> */}
+                <p>Selected Items: {cart.length}</p>
             </div>
             
         </div>
