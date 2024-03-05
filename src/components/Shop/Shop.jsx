@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
@@ -34,8 +36,7 @@ const Shop = () => {
             }
             </div>
             <div className="cart-container">
-                <h4>Oder Summary</h4>
-                <p>Selected Items: {cart.length}</p>
+                {/* <Cart cart={cart}></Cart> */}
             </div>
             
         </div>
