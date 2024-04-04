@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import './Shop.css'
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 function Shop() {
     const [products, setProducts] = useState([]);
 
@@ -83,7 +83,13 @@ function Shop() {
         setCart(newCart);
         // eslint-disable-next-line no-undef
         addToDb(product.id)
-    };
+    }
+
+
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
 
     return (
         <div className='shop-container'>
@@ -95,7 +101,10 @@ function Shop() {
                 ></Product>)}
             </div>
             <div className="cart-container">
-                <Cart cart = {cart}></Cart>
+                <Cart 
+                cart = {cart}
+                handleClearCart={handleClearCart}
+                ></Cart>
             </div>
 
         </div>
