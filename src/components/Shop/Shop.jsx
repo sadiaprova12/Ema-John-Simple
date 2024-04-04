@@ -7,6 +7,9 @@ import './Shop.css'
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
+import { Link } from 'react-router-dom';
+
+
 function Shop() {
     const [products, setProducts] = useState([]);
 
@@ -104,7 +107,16 @@ function Shop() {
                 <Cart 
                 cart = {cart}
                 handleClearCart={handleClearCart}
-                ></Cart>
+                >
+                   
+                   {/* <Link className='proceed-link' to="/orders">
+                    <button className='btn-proceed'>Review Orders</button>
+                   </Link> */}
+                   <div>
+                   <a className='proceed-link' href="/orders">
+                    <button className='btn-proceed'>Review Orders</button></a>
+                   </div>
+                </Cart>
             </div>
 
         </div>
@@ -112,3 +124,5 @@ function Shop() {
 }
 
 export default Shop;
+
+// 55-8 solve korte hbe
