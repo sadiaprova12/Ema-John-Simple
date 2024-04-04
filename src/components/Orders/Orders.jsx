@@ -4,7 +4,7 @@ import Cart from '../Cart/Cart';
 import { useLoaderData } from 'react-router-dom';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './Orders.css'
-import { removeFromDb } from '../../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 const Orders = () => {
     const savedCart = useLoaderData();
     // eslint-disable-next-line no-unused-vars
@@ -16,11 +16,17 @@ const Orders = () => {
        removeFromDb(id);
     }
     
+
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
+
     return (
         <div className='shop-container'>
             <div className='review-container'>
             {
-                savedCart.map(product => <ReviewItem
+                cart.map(product => <ReviewItem
                 key={product.id}
                 product={product}
                 handleRemoveFromCart={handleRemoveFromCart}
@@ -29,7 +35,10 @@ const Orders = () => {
 
             </div>
             <div className='cart-container'>
-                <Cart cart={savedCart}></Cart>
+                <Cart 
+                cart={cart}
+                handleClearCart={handleClearCart}
+                ></Cart>
             </div>
         </div>
     );
