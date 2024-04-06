@@ -1,4 +1,0 @@
-[[redirects]]
-from = "/*"
-to = "/src/components"
-status = 200
